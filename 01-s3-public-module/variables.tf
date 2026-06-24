@@ -21,5 +21,4 @@ variable "object_ownership" {
 variable "versioning_enabled" {
   type = bool
   default = true
-}   
-
+}

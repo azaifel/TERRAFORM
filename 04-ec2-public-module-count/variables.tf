@@ -10,7 +10,7 @@ variable "monitoring" {
 
 variable "subnet_id" {
   type    = string
-  default = "subnet-0b61aad57054f6d36"
+  default = "subnet-0c3b248958cb45fdf"
 }
 
 variable "tags" {
