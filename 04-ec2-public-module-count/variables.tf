@@ -1,23 +1,31 @@
-variable "instance_type" {
-  type    = string
-  default = "t3.micro"
+variable "instance_count" {
+  description = "Number of EC2 instances to create"
+  type        = number
+  default     = 3
 }
 
-variable "monitoring" {
+variable "instance_type" {
+  description = "Type of EC2 instance to create"
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "enable_monotoring" {
   type    = bool
   default = true
 }
 
 variable "subnet_id" {
-  type    = string
-  default = "subnet-0c3b248958cb45fdf"
+  description = "ID of the subnet to launch the EC2 instance in"
+  type        = string
+  default     = "subnet-075d7803202a14e0d"
 }
 
-variable "tags" {
-  type = map(string)
+variable "instance_tags" {
+  description = "Tags to apply to the EC2 instance"
+  type        = map(string)
   default = {
-    Terraform      = "true"
-    Environment    = "dev"
-    instance_count = "three"
+    Terraform   = "true"
+    Environment = "dev"
   }
 }
