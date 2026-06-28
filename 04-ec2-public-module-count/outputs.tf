@@ -1,15 +1,12 @@
-output "ami" {
-  value = { for k, v in module.ec2_instance : k => v.ami }
-}
-
 output "arn" {
-  value = { for k, v in module.ec2_instance : k => v.arn }
+  value = module.ec2_instance.*.arn
 }
 
-output "availability_zone" {
-  value = { for k, v in module.ec2_instance : k => v.availability_zone }
+output "instance_state" {
+  value = module.ec2_instance.*.instance_state
 }
 
 output "id" {
-  value = { for k, v in module.ec2_instance : k => v.id }
+  description = "value of the EC2 instance ID"
+  value       = module.ec2_instance.*.id
 }
