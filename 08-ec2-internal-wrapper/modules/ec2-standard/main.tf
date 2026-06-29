@@ -1,5 +1,6 @@
-module "ec2_instance_child" {
-  source = "terraform-aws-modules/ec2-instance/aws"
+module "ec2_instance" {
+  source  = "terraform-aws-modules/ec2-instance/aws"
+  version = "6.4.0"
 
   name          = var.name
   instance_type = var.instance_type

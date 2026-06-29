@@ -1,33 +1,21 @@
-
-variable "name_root" {
+variable "name" {
   description = "Name of the EC2 instance"
   type        = string
-  default     = "instance-test-july28-root"
+  default     = "instance-test-july28"
 }
 
-variable "instance_type_root" {
-  description = "Type of the EC2 instance"
+variable "subnet_id" {
+  description = "Subnet ID where the EC2 instance will be launched"
   type        = string
-  default     = "t3.micro"
+  default     = "subnet-0767795827c606273"
 }
 
-variable "monitoring_root" {
-  description = "Enable detailed monitoring for the EC2 instance"
-  type        = bool
-  default     = true
-}
-
-variable "subnet_id_root" {
-  description = "The VPC Subnet ID to launch the instance in"
-  type        = string
-  default     = "subnet-07e3577a8c080fbc8"
-}
-
-variable "tags_root" {
-  description = "A map of tags to assign to the instance"
+variable "tags" {
+  description = "Tags to assign to the EC2 instance"
   type        = map(string)
+
   default = {
-    "Environment" = "Development"
-    "IAC"         = "Terraform"
+    Environment = "Development"
+    IAC         = "Terraform"
   }
 }
