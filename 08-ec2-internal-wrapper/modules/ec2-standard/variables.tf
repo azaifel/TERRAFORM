@@ -1,26 +1,27 @@
-
 variable "name" {
-  description = "Name of the EC2 instance"
   type        = string
+  description = "Name of the EC2 instance."
 }
 
 variable "instance_type" {
-  description = "Type of the EC2 instance"
   type        = string
+  description = "EC2 instance type."
+  default     = "t3.micro"
 }
 
 variable "monitoring" {
-  description = "Enable detailed monitoring for the EC2 instance"
   type        = bool
+  description = "Enable detailed monitoring."
+  default     = true
 }
 
 variable "subnet_id" {
-  description = "The VPC Subnet ID to launch the instance in"
   type        = string
+  description = "Subnet ID to launch the instance in."
 }
 
 variable "tags" {
-  description = "A map of tags to assign to the instance"
   type        = map(string)
+  description = "Tags to assign to the instance."
   default     = {}
 }
