@@ -3,26 +3,36 @@ variable "bucket_name" {
 }
 
 variable "acl" {
-  type = string
-}   
+  type    = string
+  default = "private"
+}
 
 variable "control_object_ownership" {
-  type = bool
+  type    = bool
+  default = true
 }
 
 variable "object_ownership" {
-  type = string
+  type    = string
+  default = "ObjectWriter"
 }
 
 variable "versioning_enabled" {
-  type = bool
+  type    = bool
+  default = true
 }
 
 variable "object_lock_enabled" {
-  type = bool
+  type    = bool
+  default = false
 }
 
 variable "lifecycle_rule" {
-  type = any
+  type    = any
   default = []
+}
+
+variable "tags" {
+  type    = map(string)
+  default = {}
 }

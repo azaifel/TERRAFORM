@@ -1,5 +1,6 @@
-module "s3_bucket-child" {
-  source = "terraform-aws-modules/s3-bucket/aws"
+module "s3_bucket" {
+  source  = "terraform-aws-modules/s3-bucket/aws"
+  version = "4.1.2"
 
   bucket = var.bucket_name
   acl    = var.acl
@@ -12,23 +13,12 @@ module "s3_bucket-child" {
   }
 
   object_lock_enabled = var.object_lock_enabled
-  lifecycle_rule = var.lifecycle_rule
-  
-#   lifecycle_rule = [
-#     {
-#       id      = "log"
-#       enabled = true
+  lifecycle_rule      = var.lifecycle_rule
 
-#       prefix = "log/"
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 
-#       tags = {
-#         rule      = "log"
-#         autoclean = "true"
-#       }
-
-#       expiration = {
-#         days = 90
-#       }
-#     }
-#   ]
+  tags = var.tags
 }
