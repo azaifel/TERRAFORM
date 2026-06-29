@@ -20,7 +20,7 @@ variable "monitoring_root" {
 variable "subnet_id_root" {
   description = "The VPC Subnet ID to launch the instance in"
   type        = string
-  default     = "subnet-07e3577a8c080fbc8"
+  default     = "subnet-0767795827c606273"
 }
 
 variable "tags_root" {

@@ -1,4 +1,4 @@
-module "s3_bucket-child" {
+module "s3_bucket_child" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
   bucket = var.bucket_name
